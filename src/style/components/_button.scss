@@ -1,0 +1,16 @@
+button, .btn {
+    cursor: pointer;
+    font-family: $font-family-sans-serif;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin: 0 8px 8px 0;
+    padding: 16px 24px;
+    min-width: 172px;
+}
+.btn-light {
+    color: $primary;
+}
