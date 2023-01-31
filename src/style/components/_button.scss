@@ -11,6 +11,11 @@ button, .btn {
     padding: 16px 24px;
     min-width: 172px;
 }
+.btn + .btn {
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
 .btn-light {
     color: $primary;
 }
