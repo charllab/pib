@@ -4,6 +4,20 @@ get_header();
 
 <main>
 
+    <section class="page-title bg-info">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-content-center position-relative">
+                <div class="bg-image">
+                </div>
+                <div class="block__tint-overlay position-absolute h-100 z-index-1"></div>
+                <div class="home-wolf position-absolute h-100 z-index-10"></div>
+                <div class="col text-center position-relative z-index-10">
+                    <h1 class="text-uppercase text-white"><?php the_title();?></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <?php if (is_page([1716])) : ?>
 
         <?php if (have_rows('faq_block')) : $i = 0; ?>

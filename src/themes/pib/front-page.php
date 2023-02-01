@@ -1,6 +1,38 @@
 <?php get_header(); ?>
     <main>
 
+        <section class="page-title bg-info">
+            <div class="container-fluid">
+                <div class="row justify-content-center align-content-center position-relative">
+                    <div class="bg-image">
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            id="sprVideo"
+                            class="banner_video_file_bg d-none d-md-block">
+                            <source src="<?php bloginfo('template_url');?>/video/promobanner.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="block__tint-overlay position-absolute h-100 z-index-1"></div>
+                    <div class="home-wolf position-absolute h-100 z-index-10"></div>
+                    <div class="col text-center position-relative z-index-10">
+                        <h1 class="text-uppercase text-white">Penticton Indian Band</h1>
+                        <div class="social-links d-flex justify-content-center pb-5">
+                            <?php while( have_rows('social_links', 'options') ): the_row(); ?>
+                                <a class="social-link text-white px-0" target="_blank" href="<?php the_sub_field('url'); ?>">
+                                    <i class="<?php the_sub_field('icon_class'); ?> fa-2x">
+                                        <span class="sr-only"><?php the_sub_field('label'); ?></span>
+                                    </i>
+                                </a>
+                            <?php endwhile; ?>
+                        </div><!-- social-links -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section-group">
             <section class="section-md">
                 <div class="container text-left">
@@ -317,12 +349,7 @@
         </section><!-- section-group -->
 
         <section class="section-group">
-
-            <section class="section-footer-cta section-footer-cta--land-right position-relative">
-                <img src="<?php bloginfo('template_url'); ?>/images/wolf.svg"
-                     alt="<?php bloginfo('name'); ?> - Logo"
-                     class="img-fluid position-absolute wolf">
-            </section>
+            <section class="section-footer-cta section-salmon-waters"></section>
             <section class="section-xl bg-secondary">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -334,7 +361,6 @@
                     </div>
                 </div>
             </section>
-
         </section>
 
     </main>

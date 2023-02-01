@@ -1,7 +1,16 @@
 jQuery(function () {
 
-
-    $('').ma
+    // get height of margin and add it as margin-top to the main-element
+    function setMainMarginTop() {
+        var headerHeight = jQuery('#header').outerHeight();
+        jQuery('main').css('margin-top', headerHeight + 'px');
+    }
+    setMainMarginTop();
+    // reset main-element margin-top on window resize
+    jQuery( window ).resize(function() {
+        var headerHeight = jQuery('#header').outerHeight();
+        jQuery('main').css('margin-top', headerHeight + 'px');
+    });
 
     // Auto target _blank external links
     targetBlankExternalLinks();

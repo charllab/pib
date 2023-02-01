@@ -1,4 +1,4 @@
-<header id="header" class="hero-nav-overlay bg-light">
+<header id="header" class="hero-nav-overlay fixed-top bg-light">
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
