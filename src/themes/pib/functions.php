@@ -34,7 +34,8 @@ if (!function_exists('custom_after_setup_theme')) {
     function custom_after_setup_theme()
     {
         remove_theme_support('custom-background');
-        remove_theme_support('post-thumbnails');
+        add_theme_support('post-thumbnails');
+        add_post_type_support( 'page', 'excerpt' );
 
         register_nav_menus([
             'primary' => 'Primary Menu',
@@ -47,6 +48,22 @@ if (!function_exists('custom_after_setup_theme')) {
         add_editor_style('style-editor.css');
     }
 }
+
+/* trim that excerpt */
+function get_excerpt()
+{
+    $excerpt = get_the_excerpt();
+    $excerpt = preg_replace(" ([.*?])", '', $excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 20);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace('/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt . '...';
+    return $excerpt;
+}
+
+/* use get_excerpt() instead of the_excerpt() */
 
 /* Misc */
 remove_action('wp_head', 'wp_generator');

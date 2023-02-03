@@ -14,7 +14,8 @@
                         <?php if ($layout['acf_fc_layout'] == 'wide'): ?>
 
                             <div class="row">
-                                <?php $alignment = $layout['text_alignment']; ?>
+                                <?php $alignment = $layout['text_alignment'];
+                                ?>
                                 <div class="col text-<?php echo $alignment; ?>">
                                     <?php $image = $layout['image']; ?>
                                     <img src="<?php echo esc_attr($image['url']); ?>"

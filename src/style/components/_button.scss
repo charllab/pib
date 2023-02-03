@@ -16,6 +16,10 @@ button, .btn {
         margin-right: 0;
     }
 }
+.btn-primary + .btn-primary {
+        @extend .btn-secondary;
+}
+
 .btn-light {
     color: $primary;
 }

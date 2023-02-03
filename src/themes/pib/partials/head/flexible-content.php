@@ -1,16 +1,16 @@
 <?php
 
 $head = get_field('header');
-echo '<pre>';
-var_dump($head);
-echo '</pre>';
-
+$image = $head['image'];
+//echo '<pre>';
+//var_dump($head);
+//echo '</pre>';
 ?>
-
 
 <?php
 if (is_front_page()) : ?>
-    <section class="page-title bg-info">
+    <section class="page-title bg-secondary"
+             style="background-image: url(<?php echo esc_attr($image['url']) ?>); background-size: cover; background-position: center;">
         <div class="container-fluid">
             <div class="row justify-content-center align-content-center position-relative">
                 <div class="bg-image">
@@ -23,10 +23,10 @@ if (is_front_page()) : ?>
                         class="banner_video_file_bg d-none d-md-block">
                         <source src="<?php bloginfo('template_url'); ?>/video/promobanner.mp4" type="video/mp4">
                     </video>
-                </div>
-                <div class="block__tint-overlay position-absolute h-100 z-index-1"></div>
-                <div class="home-wolf position-absolute h-100 z-index-10"></div>
-                <div class="col text-center position-relative z-index-10">
+                </div><!-- bg-image -->
+                <div class="block__tint-overlay position-absolute h-100 z-index-1"></div><!-- block__tint-overlay -->
+                <div class="home-wolf position-absolute h-100 z-index-10"></div><!-- home-wolf -->
+                <div class="col text-center position-relative z-index-100">
                     <h1 class="text-uppercase text-white">Penticton Indian Band</h1>
                     <div class="social-links d-flex justify-content-center pb-5">
                         <?php while (have_rows('social_links', 'options')): the_row(); ?>
@@ -38,14 +38,13 @@ if (is_front_page()) : ?>
                             </a>
                         <?php endwhile; ?>
                     </div><!-- social-links -->
-                </div>
-            </div>
-        </div>
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
     </section>
 <?php else : ?>
-    <?php $image = $head['image']; ?>
-    <section class="page-title bg-info"
-             style="background-image: url(<?php echo esc_attr($image['url']) ?>); background-size: cover; background-position: center 0;">
+    <section class="page-title bg-secondary"
+             style="background-image: url(<?php echo esc_attr($image['url']) ?>); background-size: cover; background-position: center;">
         <div class="container-fluid">
             <div class="row justify-content-center align-content-center position-relative">
                 <div class="block__tint-overlay position-absolute h-100 z-index-1"></div>
