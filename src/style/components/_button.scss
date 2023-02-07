@@ -23,3 +23,8 @@ button, .btn {
 .btn-light {
     color: $primary;
 }
+
+body .gform_wrapper .gform_footer input[type=submit] {
+    @extend .btn;
+    @extend .btn-primary;
+}

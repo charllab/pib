@@ -8,84 +8,90 @@ get_header(); ?>
 
     <main>
 
-        <section class="page-title bg-info">
-            <div class="container-fluid">
-                <div class="row justify-content-center align-content-center position-relative">
-                    <div class="bg-image">
-                    </div>
-                    <div class="block__tint-overlay position-absolute h-100 z-index-1"></div>
-                    <div class="home-wolf position-absolute h-100 z-index-10"></div>
-                    <div class="col text-center position-relative z-index-10">
-                        <h1 class="text-uppercase text-white"><?php the_title();?></h1>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <!--main post loop-->
 
-        <div class="py-3">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-lg-6">
-                        <h1>This is Contact</h1>
+            <?php get_template_part('partials/head/flexible-content'); ?>
 
-                        <?php if (have_posts()) : ?>
-
-                            <?php /* Start the Loop */ ?>
-
-                            <?php while (have_posts()) : the_post(); ?>
-
-                                <h2 class="text-capitalize"><?php the_title(); ?></h2>
-
+            <section class="section-group">
+                <section class="section-md">
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-lg-7">
                                 <?php the_content(); ?>
+                            </div><!-- col -->
+                            <div class="col-lg-4">
+                                <div class="contact-info">
+                                    <h2 class="h3">Contact Information</h2>
+                                    <table class="tr-valignment medium mb-1">
+                                        <tr>
+                                            <td><strong>Address: </strong></td>
+                                            <td>
+                                                <?php the_field('physical_address', 'option'); ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Phone: </strong></td>
+                                            <td>
+                                                <a href="tel:+1<?php echo strip_tel(get_field('phone_number', 'option')); ?>"
+                                                   class="text-body"><?php echo get_field('phone_number', 'option'); ?></a>
+                                            </td>
+                                        </tr>
+                                        <?php if (get_field('fax_number', 'option')): ?>
+                                            <tr>
+                                                <td><strong>Fax: </strong></td>
+                                                <td>
+                                                    <a href="tel:+1<?php echo strip_tel(get_field('fax_number', 'option')); ?>"
+                                                       class="text-body"><?php echo get_field('fax_number', 'option'); ?></a>
+                                                </td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if (get_field('toll_free', 'option')): ?>
+                                            <tr>
+                                                <td><strong>Toll Free: </strong></td>
+                                                <td>
+                                                    <a href="tel:+1<?php echo strip_tel(get_field('toll_free', 'option')); ?>"
+                                                       class="text-body"><?php echo get_field('toll_free', 'option'); ?></a>
+                                                </td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <tr>
+                                            <td><strong>E-mail: </strong></td>
+                                            <td>
+                                                <a href="mailto:<?php echo get_field('email_address', 'option'); ?>"
+                                                   class="text-body"><?php echo get_field('email_address', 'option'); ?></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Hours: </strong></td>
+                                            <td>
+                                                <?php the_field('hours_of_operation', 'option'); ?>
+                                            </td>
+                                        </tr>
+                                    </table>
 
-                            <?php endwhile; ?>
 
-                        <?php endif; ?>
+                                    <?php if (get_field('map_embed_code', 'option')): ?>
+                                        <div class="google-map">
+                                            <?php $mapurl = get_field('map_embed_code', 'option'); ?>
+                                            <iframe src="<?php echo $mapurl; ?>" width="600" height="500"
+                                                    style="border:0;"
+                                                    allowfullscreen="" loading="lazy"></iframe>
+                                        </div><!-- px-0 -->
+                                    <?php endif; ?>
 
-                    </div><!-- col -->
+                                </div><!-- padding -->
+                            </div><!-- col -->
+                        </div><!-- row -->
+                    </div><!-- container -->
+                </section><!-- section-md -->
+            </section><!-- section-group -->
 
-                    <div class="col-lg-5">
-                        <div class="pt-3 pb-2 px-2 bg-light">
-                            <h2>Contact Information</h2>
-                            <?php
-                            $removethese = array("(", " ", ")", "-");
-                            ?>
-                            <table>
-                                <tr>
-                                    <td><strong>Phone: </strong></td>
-                                    <td>
-                                        <a href="tel:+1<?php echo strip_tel(get_field('primary_number', 'option')); ?>"><?php echo get_field('primary_number', 'option'); ?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pr-1"><strong>Toll Free: </strong></td>
-                                    <td>
-                                        <a href="tel:+1<?php echo strip_tel(get_field('secondary_number', 'option')); ?>"><?php echo get_field('secondary_number', 'option'); ?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><strong>E-mail: </strong></td>
-                                    <td>
-                                        <a href="mailto:<?php echo get_field('primary_email', 'option'); ?>"><?php echo get_field('primary_email', 'option'); ?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Address: </strong></td>
-                                    <td><?php echo get_field('physical_address', 'option'); ?></td>
-                                </tr>
-                            </table>
-                        </div><!-- bg-light -->
+            <?php get_template_part('partials/foot/flexible-content'); ?>
 
-                        <div class="px-0">
-                            <?php
-                            echo get_field('map_embed_code', 'option');
-                            ?>
-                        </div><!-- px-0 -->
-                    </div><!-- col -->
-                </div><!-- row -->
+            <!--main post loop-->
+        <?php endwhile; endif; ?>
 
-            </div><!-- container -->
-        </div>
 
     </main>
 
