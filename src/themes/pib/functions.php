@@ -39,8 +39,11 @@ if (!function_exists('custom_after_setup_theme')) {
 
         register_nav_menus([
             'primary' => 'Primary Menu',
-            'secondary' => 'Footer Menu',
-            'tertiary' => 'Legal Menu'
+            'about' => 'About',
+            'community' => 'Community',
+            'programs' => 'Programs & Services',
+            'updates' => 'Updates and News',
+            'contact' => 'Contact Menu'
         ]);
 
         // Style Gutenberg
@@ -86,3 +89,21 @@ if (function_exists('acf_add_options_page')) {
         'redirect' => false
     ]);
 }
+
+// hide_admin_bar_from_front_end
+function hide_admin_bar_from_front_end()
+{
+    if (is_blog_admin()) {
+        return true;
+    }
+    return false;
+}
+add_filter('show_admin_bar', 'hide_admin_bar_from_front_end');
+
+
+//  move Yoast to bottom
+function yoast_to_bottom()
+{
+    return 'low';
+}
+add_filter('wpseo_metabox_prio', 'yoast_to_bottom');

@@ -1,5 +1,8 @@
 jQuery(function () {
 
+    //remove href on .no-pointer > .dropdown-toggle
+    jQuery('.no-pointer > .dropdown-toggle').removeAttr('href');
+
     // get height of margin and add it as margin-top to the main-element
     function setMainMarginTop() {
         var headerHeight = jQuery('#header').outerHeight();

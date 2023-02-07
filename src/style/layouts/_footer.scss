@@ -7,6 +7,10 @@ footer {
         font-family: $font-family-sans-serif;
     }
 
+    .menu-item, .nav-link {
+        padding: 0;
+    }
+
     .nav-logo img {
         width: 120px;
         height: auto;

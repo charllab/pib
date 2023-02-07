@@ -24,7 +24,7 @@
                         </div><!-- social-links -->
                     </div><!-- col -->
                     <div class="col-6 col-lg">
-                        About
+                        <h6 class="mb-1">About</h6>
                         <?php wp_nav_menu([
                             'theme_location' => 'about',
                             'container_class' => 'footer-nav',
@@ -34,7 +34,7 @@
                         ]); ?>
                     </div><!-- col -->
                     <div class="col-6 col-lg">
-                        Community
+                        <h6 class="mb-1">Community</h6>
                         <?php wp_nav_menu([
                             'theme_location' => 'community',
                             'container_class' => 'footer-nav',
@@ -44,9 +44,9 @@
                         ]); ?>
                     </div><!-- col -->
                     <div class="col-6 col-lg">
-                        Updates and News
+                        <h6 class="mb-1">Updates and News</h6>
                         <?php wp_nav_menu([
-                            'theme_location' => 'news',
+                            'theme_location' => 'updates',
                             'container_class' => 'footer-nav',
                             'menu_class' => 'list-unstyled',
                             'fallback_cb' => '',
@@ -55,7 +55,13 @@
                     </div><!-- col -->
                     <div class="col-6 col-lg">
                         <h6 class="mb-1">Contact</h6>
-                        <a href="<?php echo esc_url(home_url('/member-portal')); ?>" class="small">Member Portal</a>
+                        <?php wp_nav_menu([
+                            'theme_location' => 'contact',
+                            'container_class' => 'footer-nav',
+                            'menu_class' => 'list-unstyled',
+                            'fallback_cb' => '',
+                            'walker' => new understrap_WP_Bootstrap_Navwalker(),
+                        ]); ?>
                     </div><!-- col -->
                 </div>
             </div>

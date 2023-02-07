@@ -38,9 +38,13 @@ a.nav-link {color: $blue;}
         margin: 0;
         background: white;
         padding: 4px 8px;
+        top: 32px;
         & > .menu-item > .nav-link {
             font-size: 16px;
             line-height: 1.5;
+            &:before {
+                display: none;
+            }
         }
     }
 
@@ -80,4 +84,21 @@ a.nav-link {color: $blue;}
         }
 
     }
+}
+
+#header {
+    .nav-link {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-weight: 400;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+}
+.no-pointer > .dropdown-toggle {
+    cursor: default !important;
 }
