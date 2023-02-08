@@ -10,15 +10,21 @@ $logout_url = wp_logout_url();
         <section class="section-group">
             <section class="section-md">
                 <div class="container">
-                    <div class="row">
-                        <div class="col">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
                             <?php if (is_user_logged_in()) { ?>
-                                <h2>Welcome back!</h2>
-                                <?php echo get_avatar(get_current_user_id(), 200)?>
-                                <a href="<?php echo $logout_url;?>" class="btn btn-primary">Log Out</a>
-                                <br><br>
+                                <?php
+                                $current_user = wp_get_current_user();
+                                $first_name = $current_user->user_firstname;
+                                $last_name = $current_user->user_lastname;
+                                ?>
+                                <h2>Welcome back <?php echo esc_attr($first_name) . ' ' . esc_attr($last_name); ?> <?php echo get_avatar(get_current_user_id(), 60)?></h2>
+
+                                <a href="<?php echo $logout_url;?>" class="btn btn-primary mb-1">Log Out</a>
+                                <p>As a Band Member, you have access to exclusive resources, can participate in discussions on our forum, and view our schedule of upcoming events through our event calendar.</p>
+
                             <?php } else { ?>
-                                <p class="text-center">Sorry, the Forum is for Band Members only. If you are a member, please <a href="<?php echo wp_login_url();?>">log in.</a>
+                                <p class="text-center">Sorry, this content is for Band Members only. If you are a member, please <a href="<?php echo wp_login_url();?>">log in.</a>
                                 </p>
                             <?php } ?>
                         </div><!-- col -->

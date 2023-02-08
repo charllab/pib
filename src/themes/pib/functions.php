@@ -90,6 +90,18 @@ if (function_exists('acf_add_options_page')) {
     ]);
 }
 
+//redirect subscribers account out of admin and onto portal page
+add_action('wp_login', 'redirectToFrontend');
+
+function redirectToFrontend($user_login) {
+    $user = get_user_by('login', $user_login);
+    if(count($user->roles) == 2 AND $user->roles[0] == 'subscriber') {
+        wp_redirect(site_url('/member-portal'));
+        exit;
+    }
+}
+
+
 // hide_admin_bar_from_front_end
 function hide_admin_bar_from_front_end()
 {

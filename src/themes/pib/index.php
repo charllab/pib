@@ -1,23 +1,27 @@
 <?php
 get_header();
 ?>
+<main>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <?php if (have_posts()) : ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <!--main post loop-->
 
-                <?php /* Start the Loop */ ?>
+            <section class="section-group">
+                <section class="section-md">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h2><?php the_title(); ?></h2>
+                                <?php the_content(); ?>
+                            </div><!-- col -->
+                        </div><!-- row -->
+                    </div><!-- container -->
+                </section><!-- section-md -->
+            </section><!-- section-group -->
 
-                <?php while (have_posts()) : the_post(); ?>
+        <!--main post loop-->
+    <?php endwhile; endif; ?>
 
-                    <?php the_content(); ?>
-
-                <?php endwhile; ?>
-
-            <?php endif; ?>
-        </div>
-    </div>
-</div>
+</main>
 
 <?php get_footer(); ?>
