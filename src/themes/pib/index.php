@@ -6,6 +6,8 @@ get_header();
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <!--main post loop-->
 
+        <?php if (is_user_logged_in()) : ?>
+
             <section class="section-group">
                 <section class="section-md">
                     <div class="container">
@@ -18,6 +20,12 @@ get_header();
                     </div><!-- container -->
                 </section><!-- section-md -->
             </section><!-- section-group -->
+
+        <?php else : ?>
+
+            <h1>You shall not pass!</h1>
+
+        <?php endif; ?>
 
         <!--main post loop-->
     <?php endwhile; endif; ?>

@@ -222,3 +222,21 @@ iframe {
     }
 
 }
+
+// tribe calendar margin top
+.tribe-events {
+    margin-top: 100px;
+}
+
+// restricted classes
+.member-only {
+    display: none;
+}
+.logged-in {
+    .member-only {
+        display: list-item;
+    }
+    .login-hide {
+        display: none;
+    }
+}

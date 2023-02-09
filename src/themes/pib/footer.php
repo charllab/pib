@@ -55,13 +55,26 @@
                     </div><!-- col -->
                     <div class="col-6 col-lg">
                         <h6 class="mb-1">Contact</h6>
-                        <?php wp_nav_menu([
-                            'theme_location' => 'contact',
-                            'container_class' => 'footer-nav',
-                            'menu_class' => 'list-unstyled',
-                            'fallback_cb' => '',
-                            'walker' => new understrap_WP_Bootstrap_Navwalker(),
-                        ]); ?>
+                        <?php
+                        $logout_url = wp_logout_url();
+                        ?>
+
+                        <ul id="menu-contact" class="list-unstyled">
+                            <li class="nav-item">
+                                <a title="Contact Us" href="/contact" class="nav-link">Contact Us</a></li>
+                            <?php if (!is_user_logged_in()) { ?>
+                                <li class="nav-item login-hide">
+                                    <a href="<?php echo wp_login_url(); ?>" class="nav-link">Log In</a>
+                                </li>
+                            <?php } else { ?>
+                                <li class="nav-item member-only">
+                                    <a href="/member-portal" class="nav-link">Member Portal</a>
+                                </li>
+                                <li class="nav-item member-only">
+                                    <a href="<?php echo $logout_url; ?>" class="nav-link">Log Out</a>
+                                </li>
+                            <?php } ?>
+                        </ul>
                     </div><!-- col -->
                 </div>
             </div>

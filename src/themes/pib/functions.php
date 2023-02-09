@@ -95,14 +95,14 @@ add_action('wp_login', 'redirectToFrontend');
 
 function redirectToFrontend($user_login) {
     $user = get_user_by('login', $user_login);
+    //we check for two users because of the forum adds a 2nd user role
     if(count($user->roles) == 2 AND $user->roles[0] == 'subscriber') {
         wp_redirect(site_url('/member-portal'));
         exit;
     }
 }
 
-
-// hide_admin_bar_from_front_end
+// hide_admin_bar_from_front_end by default on the frontend
 function hide_admin_bar_from_front_end()
 {
     if (is_blog_admin()) {
@@ -112,6 +112,14 @@ function hide_admin_bar_from_front_end()
 }
 add_filter('show_admin_bar', 'hide_admin_bar_from_front_end');
 
+// Hide the event calendar subscribe box on all event pages.
+add_filter( 'tec_views_v2_subscribe_links',
+    function( $subscribe_links ) {
+        // When passed an empty array, the template will bail and not display.
+        return [];
+    },
+    100
+);
 
 //  move Yoast to bottom
 function yoast_to_bottom()
