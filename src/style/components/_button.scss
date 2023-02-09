@@ -28,3 +28,13 @@ body .gform_wrapper .gform_footer input[type=submit] {
     @extend .btn;
     @extend .btn-primary;
 }
+
+// search
+.btn-submit-search {
+    padding: 6px 12px;
+    border-radius: 0 4px 4px 0;
+    border: none;
+    background-color: $muted;
+    border-left: none;
+    height: 44px;
+}

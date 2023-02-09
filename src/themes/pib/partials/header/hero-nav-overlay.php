@@ -11,11 +11,12 @@
                 </a>
             </div>
 
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".mainnav-m" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".mainnav-m"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
 
-            <div class="d-lg-flex flex-lg-column d-none d-lg-block">
+            <div class="d-lg-flex d-none d-lg-block">
 
                 <?php
                 $login_url = wp_login_url();
@@ -29,11 +30,50 @@
                     'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s <li class="nav-item login-hide"><a href="' . $login_url . '" class="nav-link">Log In</a></li><li class="nav-item member-only"><a href="/member-portal" class="nav-link member-only">Member Portal</a></li></ul>',
                     'walker' => new understrap_WP_Bootstrap_Navwalker(),
                 ]); ?>
+
+                <form class="form-inline header-search-form" method="GET" action="/" role="search">
+                    <div class="input-group">
+                        <input class="form-control search-field"
+                               id="s"
+                               name="s"
+                               type="search"
+                               placeholder="Search"
+                               aria-label="Search"
+                        >
+                        <div class="input-group-append">
+                            <button class="btn-submit-search" type="submit">
+                                <i class="fas fa-search"></i>
+                                <span class="sr-only">Search</span>
+                            </button>
+                        </div><!-- input-group-append -->
+                    </div><!-- input-group -->
+                </form>
             </div>
         </div>
     </nav>
 
     <div class="mainnav-m collapse navbar-collapse bg-muted d-lg-none">
+
+        <div class="pt-1 pb-0 px-1">
+            <form class="header-search-form" method="GET" action="/" role="search">
+                <div class="input-group">
+                    <input class="form-control search-field"
+                           id="s"
+                           name="s"
+                           type="search"
+                           placeholder="Search"
+                           aria-label="Search"
+                    >
+                    <div class="input-group-append">
+                        <button class="btn-submit-search" type="submit">
+                            <i class="fas fa-search"></i>
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </div><!-- input-group-append -->
+                </div><!-- input-group -->
+            </form>
+        </div>
+
         <?php
         $login_url = wp_login_url();
         wp_nav_menu([

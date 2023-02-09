@@ -48,7 +48,6 @@ if (is_front_page()) : ?>
         <div class="container-fluid">
             <div class="row justify-content-center align-content-center position-relative">
                 <div class="block__tint-overlay position-absolute h-100 z-index-1"></div>
-                <div class="home-wolf position-absolute h-100 z-index-10"></div>
                 <div class="col text-center position-relative z-index-10">
                     <h1 class="text-uppercase text-white mb-0"><?php echo $head['heading']; ?></h1>
                 </div>
