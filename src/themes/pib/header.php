@@ -14,6 +14,12 @@
     <script src="https://kit.fontawesome.com/61d303198f.js" crossorigin="anonymous"></script>
 
     <?php wp_head(); ?>
+    <script>
+        function mobileNavOpened() {
+        var element = document.getElementById("header");
+        element.classList.toggle("opened");
+        }
+    </script>
 </head>
 
 <body <?php body_class(); ?>>

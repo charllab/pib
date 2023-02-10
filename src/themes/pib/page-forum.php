@@ -13,8 +13,14 @@ $logout_url = wp_logout_url();
                 <div class="row">
                     <div class="col">
                         <?php if (is_user_logged_in()) { ?>
-                            <h2>Welcome back!</h2>
-                            <?php echo get_avatar(get_current_user_id(), 200) ?>
+                            <?php
+                            $current_user = wp_get_current_user();
+                            $first_name = $current_user->user_firstname;
+                            $last_name = $current_user->user_lastname;
+                            $current_user_id = get_current_user_id();
+                            $avatar = get_avatar( $current_user_id, 64, '', '', array( 'class' => 'rounded-circle' ) );
+                            ?>
+                            <h3>Welcome back <?php echo esc_attr($first_name) . ' ' . esc_attr($last_name); ?> <?php echo $avatar; ?></h3>
                             <a href="<?php echo $logout_url; ?>" class="btn btn-primary">Log Out</a>
                             <br><br>
                             <?php echo do_shortcode('[bbp-forum-index] '); ?>

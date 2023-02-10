@@ -6,20 +6,36 @@ if ($pages):
 <section class="section-group">
     <section class="section-md">
         <div class="container">
-
             <div class="row">
-                <div class="col text-center">
+                <div class="col text-center"
+                     data-aos="fade-up"
+                     data-aos-offset="120"
+                     data-aos-delay="0"
+                     data-aos-duration="1000"
+                     data-aos-easing="ease"
+                     data-aos-mirror="false"
+                     data-aos-once="false"
+                >
                     <h2 class="mb-2">Additional Quick Links</h2>
                 </div>
             </div>
-
             <div class="row justify-content-center">
-                <?php foreach ($pages as $post): // variable must be called $post (IMPORTANT) ?>
+                <?php
+                $delay = 50; // starting delay value
+                foreach ($pages as $post): // variable must be called $post (IMPORTANT) ?>
                     <?php setup_postdata($post);
                     $thumbnail_id = get_post_thumbnail_id($post->ID);
                     $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'full')[0];
                     ?>
-                    <div class="col-md-6 col-xxl-3 col-card">
+                    <div class="col-md-6 col-xxl-3 col-card"
+                         data-aos="zoom-in-up"
+                         data-aos-offset="120"
+                         data-aos-delay="<?php echo $delay; ?>"
+                         data-aos-duration="800"
+                         data-aos-easing="ease"
+                         data-aos-mirror="false"
+                         data-aos-once="false"
+                    >
                         <div class="card text-center mb-2 mb-xl-0">
                             <div class="quick-link-card-img card-img-top rounded-0"
                                  style="background-image: url(<?php echo esc_attr($thumbnail_url); ?>);
@@ -44,7 +60,9 @@ if ($pages):
                             </div>
                         </div>
                     </div><!-- col col-card -->
-                <?php endforeach;
+                <?php
+                $delay += 150; // increment the delay value
+                endforeach;
                 wp_reset_postdata();
                 endif ?>
             </div><!-- row -->

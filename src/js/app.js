@@ -15,6 +15,9 @@ jQuery(function () {
         jQuery('main').css('margin-top', headerHeight + 'px');
     });
 
+    //init animation
+    AOS.init();
+
     // Auto target _blank external links
     targetBlankExternalLinks();
 

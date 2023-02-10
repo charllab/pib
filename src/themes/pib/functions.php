@@ -121,6 +121,16 @@ add_filter( 'tec_views_v2_subscribe_links',
     100
 );
 
+//redirect to be able to select Events in QUick Links
+add_action( 'template_redirect', 'redirect_events_page' );
+
+function redirect_events_page() {
+    if ( is_page( 'events-page' ) ) {
+        wp_redirect( '/events/', 301 );
+        exit;
+    }
+}
+
 //  move Yoast to bottom
 function yoast_to_bottom()
 {

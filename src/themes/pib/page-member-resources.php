@@ -4,10 +4,11 @@ $logout_url = wp_logout_url();
 ?>
 
 <main>
+
         <?php get_template_part('partials/head/flexible-content'); ?>
 
         <section class="section-group">
-            <section class="section-md pb-0">
+            <section class="section-md">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-xl-7">

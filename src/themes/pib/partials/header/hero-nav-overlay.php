@@ -11,7 +11,7 @@
                 </a>
             </div>
 
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".mainnav-m"
+            <button class="navbar-toggler ml-auto" onclick="mobileNavOpened()" type="button" data-toggle="collapse" data-target=".mainnav-m"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>

@@ -94,6 +94,11 @@ a.nav-link {color: $blue;}
     }
 }
 
+.opened {
+    overflow: scroll;
+    height: 100%;
+}
+
 @include media-breakpoint-up(lg) {
     .dropdown:hover > .dropdown-menu {
         display: block;

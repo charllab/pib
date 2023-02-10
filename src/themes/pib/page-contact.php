@@ -20,7 +20,16 @@ get_header(); ?>
                             <div class="col-lg-7">
                                 <?php the_content(); ?>
                             </div><!-- col -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-4"
+
+                                 data-aos="slide-up"
+                                 data-aos-offset="120"
+                                 data-aos-delay="500"
+                                 data-aos-duration="1000"
+                                 data-aos-easing="ease-out"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false"
+                            >
                                 <div class="contact-info">
                                     <h2 class="h3">Contact Information</h2>
                                     <table class="tr-valignment medium mb-1">
