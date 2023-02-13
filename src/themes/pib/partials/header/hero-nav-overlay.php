@@ -1,6 +1,6 @@
 <header id="header" class="hero-nav-overlay fixed-top bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-xxl navbar-light">
         <div class="container">
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -16,7 +16,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <div class="d-lg-flex d-none d-lg-block">
+            <div class="d-xxl-flex d-none d-xxl-block">
 
                 <?php
                 $login_url = wp_login_url();
@@ -52,9 +52,9 @@
         </div>
     </nav>
 
-    <div class="mainnav-m collapse navbar-collapse bg-muted d-lg-none">
+    <div class="mainnav-m collapse navbar-collapse bg-muted d-xxl-none">
 
-        <div class="pt-1 pb-0 px-1">
+        <div class="container pt-1 pb-0">
             <form class="header-search-form" method="GET" action="/" role="search">
                 <div class="input-group">
                     <input class="form-control search-field"
@@ -72,7 +72,7 @@
                     </div><!-- input-group-append -->
                 </div><!-- input-group -->
             </form>
-        </div>
+        </div><!-- container -->
 
         <?php
         $login_url = wp_login_url();
