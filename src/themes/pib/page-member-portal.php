@@ -33,7 +33,9 @@ $logout_url = wp_logout_url();
             </section><!-- section-md -->
         </section><!-- section-group -->
 
+        <?php if (is_user_logged_in()) { ?>
         <?php get_template_part('partials/cards/quick-links'); ?>
+        <?php } ?>
         <?php get_template_part('partials/foot/flexible-content'); ?>
 
 </main>

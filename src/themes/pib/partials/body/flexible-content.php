@@ -8,20 +8,21 @@ if ($layouts) : ?>
 
     <section class="section-group">
         <?php foreach ($layouts as $layout) : ?>
-            <section class="section-md">
+            <section class="section-md"
+                     data-aos="fade-up"
+                     data-aos-offset="120"
+                     data-aos-delay="0"
+                     data-aos-duration="1000"
+                     data-aos-easing="ease"
+                     data-aos-mirror="false"
+                     data-aos-once="false"
+            >
                 <div class="container text-left">
                     <?php if ($layout['acf_fc_layout'] == 'wide'): ?>
 
                     <div class="row">
                         <?php $alignment = $layout['text_alignment']; ?>
                         <div class="col text-<?php echo $alignment; ?>"
-                             data-aos="fade-up"
-                             data-aos-offset="120"
-                             data-aos-delay="0"
-                             data-aos-duration="1000"
-                             data-aos-easing="ease"
-                             data-aos-mirror="false"
-                             data-aos-once="false"
                         >
                             <?php $image = $layout['image']; ?>
                             <img src="<?php echo esc_attr($image['url']); ?>"
@@ -125,10 +126,12 @@ if ($layouts) : ?>
                                                  data-aos-mirror="false"
                                                  data-aos-once="false"
                                             >
+                                                <?php if($image): ?>
                                                 <img src="<?php echo esc_attr($image['url']); ?>"
                                                      alt="<?php echo esc_attr($image['alt']); ?>"
                                                      class="img-fluid d-block mx-auto mb-1">
-                                                <?php if ($layout['heading']): ?>
+                                                <?php endif; ?>
+                                                <?php if ($column['heading']): ?>
                                                     <h2><?php echo esc_attr($column['heading']); ?></h2>
                                                 <?php endif; ?>
                                                 <p><?php echo $column['text_area']; ?></p>
