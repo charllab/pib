@@ -25,11 +25,15 @@ if ($layouts) : ?>
                         <div class="col text-<?php echo $alignment; ?>"
                         >
                             <?php $image = $layout['image']; ?>
-                            <img src="<?php echo esc_attr($image['url']); ?>"
-                                 alt="<?php echo esc_attr($image['alt']); ?>"
-                                 class="img-fluid d-block mx-auto mb-1 mb-md-2">
-                            <h2><?php echo esc_attr($layout['heading']); ?></h2>
-                            <p><?php echo $layout['text_area']; ?></p>
+                            <?php if ($image): ?>
+                                <img src="<?php echo esc_attr($image['url']); ?>"
+                                     alt="<?php echo esc_attr($image['alt']); ?>"
+                                     class="img-fluid d-block mx-auto mb-1 mb-md-2">
+                            <?php endif; ?>
+                            <?php if ($layout['heading']): ?>
+                                <h2><?php echo esc_attr($layout['heading']); ?></h2>
+                            <?php endif; ?>
+                            <?php echo $layout['text_area']; ?>
                         </div><!-- col -->
                     </div><!-- row -->
                     <?php $buttons = $layout['buttons']; ?>
@@ -42,11 +46,9 @@ if ($layouts) : ?>
                             <?php else : ?>
                             <div class="row justify-content-start col-px">
                                 <?php endif; ?>
-
                                 <?php foreach ($buttons as $button) : ?>
                                     <a href="<?php echo $button['button_link']; ?>"
-                                       class="btn btn-primary"
-                                    >
+                                       class="btn btn-primary">
                                         <?php echo $button['button_label']; ?>
                                     </a>
                                 <?php endforeach; ?>
@@ -73,7 +75,7 @@ if ($layouts) : ?>
                                         <?php if ($layout['heading']): ?>
                                             <h2><?php echo esc_attr($layout['heading']); ?></h2>
                                         <?php endif; ?>
-                                        <p><?php echo $layout['text_area']; ?></p>
+                                        <?php echo $layout['text_area']; ?>
                                         <?php $buttons = $layout['buttons']; ?>
                                         <?php if ($buttons): ?>
                                             <?php foreach ($buttons as $button) : ?>
@@ -95,7 +97,6 @@ if ($layouts) : ?>
                                         <img src="<?php echo esc_attr($image['url']); ?>"
                                              alt="<?php echo esc_attr($image['alt']); ?>"
                                              class="img-fluid d-block mx-auto mb-1"
-
                                              data-aos="fade"
                                              data-aos-offset="120"
                                              data-aos-delay="800"
@@ -106,7 +107,6 @@ if ($layouts) : ?>
                                         >
                                     </div><!-- col -->
                                 </div><!-- row -->
-
                             <?php elseif ($layout['acf_fc_layout'] == 'stack'):
                                 $columns = $layout['columns'];
                                 if ($columns): ?>
@@ -126,15 +126,15 @@ if ($layouts) : ?>
                                                  data-aos-mirror="false"
                                                  data-aos-once="false"
                                             >
-                                                <?php if($image): ?>
-                                                <img src="<?php echo esc_attr($image['url']); ?>"
-                                                     alt="<?php echo esc_attr($image['alt']); ?>"
-                                                     class="img-fluid d-block mx-auto mb-1">
+                                                <?php if ($image): ?>
+                                                    <img src="<?php echo esc_attr($image['url']); ?>"
+                                                         alt="<?php echo esc_attr($image['alt']); ?>"
+                                                         class="img-fluid d-block mx-auto mb-1">
                                                 <?php endif; ?>
                                                 <?php if ($column['heading']): ?>
                                                     <h2><?php echo esc_attr($column['heading']); ?></h2>
                                                 <?php endif; ?>
-                                                <p><?php echo $column['text_area']; ?></p>
+                                                <?php echo $column['text_area']; ?>
                                                 <?php $buttons = $column['buttons']; ?>
                                                 <?php if ($buttons): ?>
                                                     <?php foreach ($buttons as $button) : ?>
@@ -152,7 +152,6 @@ if ($layouts) : ?>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </div><!-- col -->
-
                                             <?php
                                             $delay += 300; // increment the delay value
                                         endforeach;

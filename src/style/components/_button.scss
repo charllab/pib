@@ -11,13 +11,15 @@ button, .btn {
     padding: 16px 24px;
     min-width: 172px;
 }
+
 .btn + .btn {
     &:last-of-type {
         margin-right: 0;
     }
 }
-.btn-primary + .btn-primary {
-        @extend .btn-secondary;
+
+.btn-primary + .btn-primary:nth-child(even) {
+    @extend .btn-secondary;
 }
 
 .btn-light {
