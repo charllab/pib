@@ -17,7 +17,7 @@ if (is_front_page()) : ?>
                         playsinline
                         id="sprVideo"
                         class="banner_video_file_bg d-none d-md-block">
-                        <source src="<?php bloginfo('template_url'); ?>/video/AdobeStock_422850724_Video_HD_Preview.mov" type="video/mov">
+                        <source src="<?php bloginfo('template_url'); ?>/video/AdobeStock_422850724_Video_HD_Preview.mp4" type="video/mp4">
                     </video>
                 </div><!-- bg-image -->
                 <div class="block__tint-overlay position-absolute h-100 z-index-1"></div><!-- block__tint-overlay -->
