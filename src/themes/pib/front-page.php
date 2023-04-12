@@ -23,7 +23,7 @@
                              data-aos-mirror="false"
                              data-aos-once="false"
                         >
-                            <?php echo do_shortcode("[instagram-feed feed=1]"); ?>
+                            <?php echo do_shortcode("[instagram-feed feed=3]"); ?>
                         </div><!-- col -->
                     </div><!-- row -->
                 </div><!-- container -->
