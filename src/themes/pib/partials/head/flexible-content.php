@@ -17,10 +17,25 @@ if (is_front_page()) : ?>
                         playsinline
                         id="sprVideo"
                         class="banner_video_file_bg d-none d-md-block">
-                        <source src="<?php bloginfo('template_url'); ?>/video/AdobeStock_422850724_Video_HD_Preview.mp4" type="video/mp4">
+                        <source src="<?php bloginfo('template_url'); ?>/video/AdobeStock_422850724_Video_HD_Preview.mp4"
+                                type="video/mp4">
                     </video>
                 </div><!-- bg-image -->
                 <div class="block__tint-overlay position-absolute h-100 z-index-1"></div><!-- block__tint-overlay -->
+                <?php
+                $alert = get_field('alert_bar', 'option');
+                $alertmsg = $alert['message'];
+                $alertlink = $alert['alert_link'];
+                if($alertmsg) : ?>
+                    <div class="noticebar position-absolute w-100 z-index-100 py-1 text-center">
+                        <p class="mb-0 mx-auto">
+                            <?php echo $alertmsg; ?>
+                            <?php if($alertlink) : ?>
+                            <a href="<?php echo $alertlink['url'];?>" target="<?php echo $alertlink['target'];?>"><?php echo $alertlink['title'];?></a>
+                            <?php endif; ?>
+                        </p>
+                    </div><!-- noticebar -->
+                <?php endif; ?>
                 <div class="home-wolf position-absolute h-100 z-index-10"></div><!-- home-wolf -->
                 <div class="col text-center position-relative z-index-100"
                      data-aos="fade"
@@ -31,6 +46,25 @@ if (is_front_page()) : ?>
                      data-aos-mirror="false"
                      data-aos-once="true"
                 >
+                    <form class="form-inline header-search-form border-0 mb-2 mt-4 d-none d-xxl-block" method="GET"
+                          action="/" role="search">
+                        <div class="input-group mx-auto w-100" style="max-width: 950px;">
+                            <input class="form-control search-field"
+                                   id="s"
+                                   name="s"
+                                   type="search"
+                                   placeholder="Type something…"
+                                   aria-label="Search"
+                            >
+                            <div class="input-group-append">
+                                <button class="btn-submit-search" type="submit">
+                                    <i class="fas fa-search"></i>
+                                    <span class="sr-only">Search</span>
+                                </button>
+                            </div><!-- input-group-append -->
+                        </div><!-- input-group -->
+                    </form>
+
                     <h1 class="text-uppercase text-white">Penticton Indian Band</h1>
                     <div class="social-links d-flex justify-content-center pb-5">
                         <?php while (have_rows('social_links', 'options')): the_row(); ?>
@@ -61,6 +95,24 @@ if (is_front_page()) : ?>
                      data-aos-mirror="false"
                      data-aos-once="false"
                 >
+                    <form class="form-inline header-search-form border-0 mb-1 d-none d-xxl-block" method="GET"
+                          action="/" role="search">
+                        <div class="input-group mx-auto w-100" style="max-width: 950px;">
+                            <input class="form-control search-field"
+                                   id="s"
+                                   name="s"
+                                   type="search"
+                                   placeholder="Type something…"
+                                   aria-label="Search"
+                            >
+                            <div class="input-group-append">
+                                <button class="btn-submit-search" type="submit">
+                                    <i class="fas fa-search"></i>
+                                    <span class="sr-only">Search</span>
+                                </button>
+                            </div><!-- input-group-append -->
+                        </div><!-- input-group -->
+                    </form>
                     <h1 class="text-uppercase text-white mb-0"><?php echo $head['heading']; ?></h1>
                 </div>
             </div>

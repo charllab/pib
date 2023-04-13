@@ -31,23 +31,6 @@
                     'walker' => new understrap_WP_Bootstrap_Navwalker(),
                 ]); ?>
 
-                <form class="form-inline header-search-form" method="GET" action="/" role="search">
-                    <div class="input-group">
-                        <input class="form-control search-field"
-                               id="s"
-                               name="s"
-                               type="search"
-                               placeholder="Search"
-                               aria-label="Search"
-                        >
-                        <div class="input-group-append">
-                            <button class="btn-submit-search" type="submit">
-                                <i class="fas fa-search"></i>
-                                <span class="sr-only">Search</span>
-                            </button>
-                        </div><!-- input-group-append -->
-                    </div><!-- input-group -->
-                </form>
             </div>
         </div>
     </nav>
