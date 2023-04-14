@@ -6,7 +6,7 @@
                     <div class="col-lg-3 text-center text-lg-left">
                         <div class="nav-logo">
                             <a href="<?php echo esc_url(home_url('/')); ?>">
-                                <img src="<?php bloginfo('template_url'); ?>/images/logo.svg"
+                                <img src="<?php bloginfo('template_url'); ?>/images/logo.png"
                                      alt="<?php bloginfo('name'); ?> - Logo"
                                      class="img-fluid mb-1">
                                 <span class="sr-only"><?php bloginfo('name'); ?></span>
