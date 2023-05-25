@@ -18,6 +18,10 @@ a.nav-link {
                 &:nth-last-child(2) {
                     & > .nav-link {
                         border-right: none;
+
+                        &:before {
+                            display: none;
+                        }
                     }
                 }
 
@@ -26,7 +30,15 @@ a.nav-link {
                     height: 100%;
                     text-transform: uppercase;
                     text-align: center;
-                    border-right: 1px solid #d9d9d9;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        width: 1px;
+                        background-color: #d9d9d9;
+                        height: calc(100% - 40px);
+                    }
 
                     span.link-icon {
                         height: 91px;
@@ -101,7 +113,7 @@ a.nav-link {
 
             & > .nav-item {
                 & > .nav-link {
-                    padding: 0 20px;
+                    padding: 20px;
                 }
             }
         }
@@ -114,8 +126,12 @@ a.nav-link {
     font-weight: 500;
 
     .navbar {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 0;
+        padding-bottom: 0;
+        @include media-breakpoint-down(xxl) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
 
     .navbar-light .navbar-toggler {
@@ -147,7 +163,7 @@ a.nav-link {
         margin: 0;
         background: white;
         padding: 4px 8px;
-        top: 118px;
+        top: 140px;
 
         & > .menu-item > .nav-link {
             font-size: 16px;
@@ -164,6 +180,35 @@ a.nav-link {
         .navbar-nav .nav-link {
             padding: 0 20px 0 0;
             position: relative;
+        }
+        .menu-item {
+            position: relative;
+        }
+        .dropdown-submenu {
+            border-bottom: 1px dashed #e2e2e2;
+            a.nav-link {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-right: 8px;
+            }
+            & > a:after {
+                display: inline-block;
+                margin-left: 0.255em;
+                vertical-align: 0.255em;
+                content: "";
+                border-top: 0.3em solid;
+                border-right: 0.3em solid transparent;
+                border-bottom: 0;
+                border-left: 0.3em solid transparent;
+            }
+        }
+        .dropdown-menu > li:hover {
+            .dropdown-menu {
+                display: block;
+                top: 0;
+                left: 100%;
+            }
         }
 
         //.nav-item.active .nav-link {

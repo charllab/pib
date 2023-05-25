@@ -17,18 +17,18 @@
             </button>
 
             <div class="d-xxl-flex d-none d-xxl-block">
-
                 <?php
                 $login_url = wp_login_url();
                 wp_nav_menu([
-                    'theme_location' => 'primary',
-                    'container_class' => 'collapse navbar-collapse',
-                    'container_id' => 'mainnav',
-                    'menu_class' => 'navbar-nav ml-auto',
-                    'fallback_cb' => '',
-                    'menu_id' => 'main-menu',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s <li class="nav-item login-hide"><a href="' . $login_url . '" class="nav-link">Member LogIn</a></li><li class="nav-item member-only"><a href="/member-portal" class="nav-link member-only">Member Portal</a></li></ul>',
-                    'walker' => new understrap_WP_Bootstrap_Navwalker(),
+                    'theme_location'    => 'primary',
+                    'depth'             => 3,
+                    'container_class'   => 'collapse navbar-collapse',
+                    'container_id'      => 'mainnav',
+                    'menu_class'        => 'navbar-nav ml-auto',
+                    'fallback_cb'       => '',
+                    'menu_id'           => 'main-menu',
+                    'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s <li class="nav-item login-hide"><a href="' . $login_url . '" class="nav-link">Member LogIn</a></li><li class="nav-item member-only"><a href="/member-portal" class="nav-link member-only">Member Portal</a></li></ul>',
+                    'walker'            => new understrap_WP_Bootstrap_Navwalker(),
                 ]); ?>
 
             </div>
@@ -60,14 +60,15 @@
         <?php
         $login_url = wp_login_url();
         wp_nav_menu([
-            'theme_location' => 'primary',
-            'container_class' => 'container py-1',
-            'container_id' => 'mainnav',
-            'menu_class' => 'navbar-nav ml-auto',
-            'fallback_cb' => '',
-            'menu_id' => 'main-menu',
-            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s <li class="nav-item login-hide"><a href="' . $login_url . '" class="nav-link">Member Login</a></li><li class="nav-item member-only"><a href="/member-portal" class="nav-link">Member Portal</a></li></ul>',
-            'walker' => new understrap_WP_Bootstrap_Navwalker(),
+            'theme_location'    => 'primary',
+            'depth'             => 3,
+            'container_class'   => 'container py-1',
+            'container_id'      => 'mainnav',
+            'menu_class'        => 'navbar-nav ml-auto',
+            'fallback_cb'       => '',
+            'menu_id'           => 'main-menu',
+            'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s <li class="nav-item login-hide"><a href="' . $login_url . '" class="nav-link">Member Login</a></li><li class="nav-item member-only"><a href="/member-portal" class="nav-link">Member Portal</a></li></ul>',
+            'walker'            => new understrap_WP_Bootstrap_Navwalker(),
         ]); ?>
     </div>
 
