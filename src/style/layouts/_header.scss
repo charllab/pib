@@ -4,9 +4,6 @@ a.nav-link {
 
 .navbar {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    @include media-breakpoint-up(xxl) {
-
-    }
 
     @include media-breakpoint-up(xxl) {
         #main-menu {
@@ -106,7 +103,7 @@ a.nav-link {
             }
         }
     }
-    @include media-breakpoint-up(xxxl) {
+    @include media-breakpoint-up(xxl) {
         #main-menu {
             display: flex;
             align-items: flex-end;
@@ -128,7 +125,7 @@ a.nav-link {
     .navbar {
         padding-top: 0;
         padding-bottom: 0;
-        @include media-breakpoint-down(xxl) {
+        @include media-breakpoint-down(xl) {
             padding-top: 20px;
             padding-bottom: 20px;
         }
