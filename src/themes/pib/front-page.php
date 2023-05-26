@@ -6,6 +6,25 @@
             <?php get_template_part('partials/head/flexible-content'); ?>
             <div class="main-content--decorative">
                 <?php get_template_part('partials/body/flexible-content'); ?>
+                <section class="section-group">
+                    <section>
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <div class="col-12"
+                                     data-aos="fade-up"
+                                     data-aos-offset="120"
+                                     data-aos-delay="0"
+                                     data-aos-duration="1000"
+                                     data-aos-easing="ease"
+                                     data-aos-mirror="false"
+                                     data-aos-once="false"
+                                >
+                                    <?php echo do_shortcode("[custom-facebook-feed feed=1]"); ?>
+                                </div><!-- col -->
+                            </div><!-- row -->
+                        </div><!-- container -->
+                    </section><!-- section-md -->
+                </section><!-- section-group -->
                 <?php get_template_part('partials/cards/quick-links'); ?>
             </div>
 
