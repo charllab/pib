@@ -95,6 +95,9 @@
 }
 
 .home {
+    .quick-link-section-title {
+        display: none;
+    }
     .page-title {
         .row {
             height: 660px;
@@ -306,5 +309,49 @@ input:hover, input:focus {
     }
     button.pum-close.popmake-close {
         background-color: transparent;
+    }
+}
+
+.position-tile {
+    font-size: .875rem;
+    color: #78837e;
+}
+.decorative {
+    position: relative;
+    z-index: 1;
+    &::after {
+        z-index: 9;
+        display: block;
+        position: absolute;
+        content: '';
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 8px;
+        background: rgb(209,119,97);
+        background: linear-gradient(90deg, rgba(209,119,97,1) 0%, rgba(209,119,97,1) 33%, rgba(174,190,55,1) 33%, rgba(174,190,55,1) 66%, rgba(117,142,188,1) 66%, rgba(117,142,188,1) 100%);
+        @include media-breakpoint-up(md) {
+            width: 8px;
+            height: 100%;
+            background: rgb(209,119,97);
+            background: linear-gradient(180deg, rgba(209,119,97,1) 0%, rgba(209,119,97,1) 33%, rgba(174,190,55,1) 33%, rgba(174,190,55,1) 66%, rgba(117,142,188,1) 66%, rgba(117,142,188,1) 100%);
+
+        }
+    }
+}
+.bio-img {
+    height: 330px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    aspect-ratio: 432 / 432;
+    @include media-breakpoint-up(md) {
+        height: 225px;
+    }
+    @include media-breakpoint-up(lg) {
+        height: 444px;
+    }
+    @include media-breakpoint-up(xxl) {
+        height: 516px;
     }
 }

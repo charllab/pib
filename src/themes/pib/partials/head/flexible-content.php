@@ -65,7 +65,7 @@ if (is_front_page()) : ?>
                         </div><!-- input-group -->
                     </form>
 
-                    <h1 class="text-uppercase text-white">Penticton Indian Band</h1>
+                    <h1 class="text-uppercase text-white"><?php echo get_bloginfo( 'name' ); ?></h1>
                     <div class="social-links d-flex justify-content-center pb-5">
                         <?php while (have_rows('social_links', 'options')): the_row(); ?>
                             <a class="social-link text-white px-0" target="_blank"

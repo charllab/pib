@@ -6,6 +6,7 @@
             <?php get_template_part('partials/head/flexible-content'); ?>
             <div class="main-content--decorative">
                 <?php get_template_part('partials/body/flexible-content'); ?>
+                <?php get_template_part('partials/cards/quick-links'); ?>
                 <section class="section-group">
                     <section>
                         <div class="container">
@@ -25,7 +26,7 @@
                         </div><!-- container -->
                     </section><!-- section-md -->
                 </section><!-- section-group -->
-                <?php get_template_part('partials/cards/quick-links'); ?>
+
             </div>
 
 

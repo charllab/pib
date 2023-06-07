@@ -4,9 +4,9 @@ if ($pages):
 ?>
 
 <section class="section-group">
-    <section class="section-md">
+    <section class="section-md hompe-page-section-md">
         <div class="container">
-            <div class="row">
+            <div class="row quick-link-section-title">
                 <div class="col text-center"
                      data-aos="fade-up"
                      data-aos-offset="120"
