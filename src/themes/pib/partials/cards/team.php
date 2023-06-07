@@ -41,9 +41,8 @@ $posts = get_posts(array(
 
             <div class="row align-items-md-center mb-2"
                  data-aos="slide-up"
-                 data-aos-offset="120"
-                 data-aos-delay="<?php echo $delay; ?>"
-                 data-aos-duration="1500"
+                 data-aos-offset="100"
+                 data-aos-duration="1000"
                  data-aos-easing="ease"
                  data-aos-mirror="false"
                  data-aos-once="true"
@@ -67,7 +66,7 @@ $posts = get_posts(array(
                         <p class="position-tile">
                             <?php the_field('role'); ?>
                             <?php if (get_field('alternate')): ?>
-                            <b><br>Alternate:</b> <?php the_field('alternate'); ?>
+                            <br><?php the_field('alternate'); ?>
                             <?php endif; ?>
                         </p>
                         <?php if (get_field('bio_excerpt')): ?>
@@ -102,7 +101,7 @@ $posts = get_posts(array(
                             <p class="position-tile">
                                 <?php the_field('role'); ?>
                                 <?php if (get_field('alternate')): ?>
-                                    <b><br>Alternate:</b> <?php the_field('alternate'); ?>
+                                    <br><?php the_field('alternate'); ?>
                                 <?php endif; ?>
                             </p>
                             <?php the_field('full_bio'); ?>
