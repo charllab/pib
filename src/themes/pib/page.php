@@ -22,9 +22,9 @@ get_header();
             </section><!-- section-group -->
 
         <?php else : ?>
-
             <?php get_template_part('partials/head/flexible-content'); ?>
             <div class="main-content--decorative">
+                <?php get_template_part('partials/cards/child-links'); ?>
                 <?php get_template_part('partials/body/flexible-content'); ?>
                 <?php get_template_part('partials/cards/quick-links'); ?>
             </div>
