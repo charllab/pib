@@ -4,10 +4,10 @@ if ($pages):
 ?>
 
 <section class="section-group child-links-section"
-         data-aos="fade-up"
-         data-aos-offset="120"
+         data-aos="fade-in"
+         data-aos-offset="50"
          data-aos-delay="0"
-         data-aos-duration="1000"
+         data-aos-duration="1500"
          data-aos-easing="ease"
          data-aos-mirror="false"
          data-aos-once="false"
