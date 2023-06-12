@@ -121,6 +121,9 @@ a.nav-link {
     font-family: $font-family-sans-serif;
     font-size: 16px;
     font-weight: 500;
+    @include media-breakpoint-only(xxl) {
+        font-size: 13px;
+    }
 
     .navbar {
         padding-top: 0;

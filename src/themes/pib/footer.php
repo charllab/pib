@@ -12,7 +12,6 @@
                                 <span class="sr-only"><?php bloginfo('name'); ?></span>
                             </a>
                         </div><!-- nav-logo -->
-                        <p>Lorem ipsum dolor sit amet, consectetur.</p>
                         <div class="social-links d-flex justify-content-center justify-content-lg-start">
                             <?php while( have_rows('social_links', 'options') ): the_row(); ?>
                                 <a class="social-link text-dark px-0" target="_blank" href="<?php the_sub_field('url'); ?>">
